@@ -1,7 +1,16 @@
 import serial
+import psutil
+import time
+from time import sleep
 ser = serial.Serial()
 ser.baudrate = 115200
 ser.port = 'COM3'
-ser.open()
-ser.write(b'Hello world!')
-ser.close()
+
+while True:
+	ser.open()
+	usage = "Usage: " + str(psutil.cpu_percent()) + "%"
+	ser.write(usage.encode())
+	ser.close()
+	sleep(2)
+
+
