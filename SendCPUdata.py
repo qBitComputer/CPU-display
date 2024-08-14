@@ -11,6 +11,6 @@ while True:
 	usage = "Usage: " + str(psutil.cpu_percent()) + "%"
 	ser.write(usage.encode())
 	ser.close()
-	sleep(2)
+	sleep(1.5)
 
 
